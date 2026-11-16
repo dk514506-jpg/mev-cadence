@@ -1,0 +1,55 @@
+{
+  "files": [
+    {
+      "path": "reading-campaign-2026-11-02/_sources/CWLPaper/CWLPaper.txt",
+      "sha256": "796fe2fe2f301203676c149a4f099ea2e9319f3f44226fea0bfdcfebb814303a"
+    },
+    {
+      "path": "reading-campaign-2026-11-02/_sources/ICLR-2609.29875-agent-forget-reasoning/ICLR-2609.29875-agent-forget-reasoning.txt",
+      "sha256": "b22b5d28e6b5c5c79143834ea6124442c5e21e43309b3ebf0fa050174418a805"
+    }
+  ],
+  "manifest_version": "wave1-external-record-v1",
+  "spans": [
+    {
+      "byte_end": 17852,
+      "byte_start": 17701,
+      "expected_residuals": [],
+      "file": "reading-campaign-2026-11-02/_sources/CWLPaper/CWLPaper.txt",
+      "line_end": 298,
+      "line_start": 297,
+      "span_id": "cwl-297-298",
+      "text_sha256": "3fc986e8157c96a90db0a7f402a37935cc02ab5966dbb8efd4dad4fcd116cb78"
+    },
+    {
+      "byte_end": 18884,
+      "byte_start": 18606,
+      "expected_residuals": [
+        {
+          "exact_value": "grep",
+          "kind": "named_items"
+        },
+        {
+          "exact_value": "glob",
+          "kind": "named_items"
+        }
+      ],
+      "file": "reading-campaign-2026-11-02/_sources/CWLPaper/CWLPaper.txt",
+      "line_end": 312,
+      "line_start": 309,
+      "span_id": "cwl-309-312",
+      "text_sha256": "2e4806840d3bc025e92c687fcad9e9d51e177f009e7f1a8dcdeb8e4a6d60a63a"
+    },
+    {
+      "byte_end": 15769,
+      "byte_start": 15577,
+      "expected_residuals": [],
+      "file": "reading-campaign-2026-11-02/_sources/ICLR-2609.29875-agent-forget-reasoning/ICLR-2609.29875-agent-forget-reasoning.txt",
+      "line_end": 391,
+      "line_start": 390,
+      "span_id": "iclr-390-391",
+      "text_sha256": "3f33c894fa28c62571e30cac8d21d11d3fd38b1a2a5defd9384c7df0a758b5f6"
+    }
+  ],
+  "trailing_newline_policy": "slices are end-exclusive and never include a trailing newline"
+}

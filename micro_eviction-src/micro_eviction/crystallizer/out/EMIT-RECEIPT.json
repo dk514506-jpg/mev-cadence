@@ -1,0 +1,9 @@
+{
+  "build_run_id": "compose-next-cycle1-t7",
+  "command": "/home/greenknight/Desktop/roof/.worktrees/compose-next-v1/campaigns/bench/micro-eviction/micro_eviction/crystallizer/cli.py emit --plan micro_eviction/crystallizer/corpus/wave1-external-record.plan.json --manifest micro_eviction/crystallizer/corpus/wave1-external-record.slice.json --out-dir micro_eviction/crystallizer/out",
+  "created_utc": "2026-11-03T00:00:00Z",
+  "exit": 0,
+  "honest_limits_sha256": "0d069333db0bbf656e8c50ca5443990aa9c30660639d27c52c05c605bab06bf3",
+  "input_manifest_sha256": "398952b67013e82c08718d84ec9a11305b8c801f52a8571c827f808b704a6d74",
+  "output_package_sha256": "6433a075a31e4a83c1b63f3397a542eac999c3fd96bcd55aff96e8386ce5b9d5"
+}

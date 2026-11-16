@@ -1,0 +1,110 @@
+{
+  "schema": "falsifiers-v1",
+  "falsifiers": [
+    {
+      "name": "byte-mismatched CONSTRAINT atoms",
+      "observable": "count of CONSTRAINT/EVIDENCE byte-verbatim atoms whose text is not byte-identical to its text-of-record span slice",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "C1"
+    },
+    {
+      "name": "dangling evidence pointers",
+      "observable": "count of dangling evidence pointers (evidence_index key absent from atoms[] or text-of-record span unresolvable)",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "C2"
+    },
+    {
+      "name": "missing residuals",
+      "observable": "count of manifest expected_residuals tokens absent from residuals[]",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "C3"
+    },
+    {
+      "name": "stale-and-trusted residuals",
+      "observable": "count of residuals with stale_flag set and trusted true",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "E-A9"
+    },
+    {
+      "name": "freshness mismatch claimed fresh",
+      "observable": "count of fingerprint classes whose recomputed hash differs while freshness claims fresh",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "C4"
+    },
+    {
+      "name": "untagged atoms",
+      "observable": "count of atoms with retention_type absent or outside the V1.6 six-label enum",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "C8"
+    },
+    {
+      "name": "double-tagged atoms",
+      "observable": "count of atoms carrying more than one retention_type label",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "C8"
+    },
+    {
+      "name": "seeded-constraint misses",
+      "observable": "count of committed probe seeds missing the CONSTRAINT emission round-trip (zero-miss rule)",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "C8"
+    },
+    {
+      "name": "in-scope user-span coverage",
+      "observable": "fraction of in-scope user spans byte-identical in user_content.live_context_turns",
+      "threshold": 1.0,
+      "direction": "below",
+      "maps_to_check": "C7"
+    },
+    {
+      "name": "unsandboxed executions",
+      "observable": "count of executable-check runs violating the sandbox run contract (cwd containment, environment scrubbing, timeout)",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "C9a"
+    },
+    {
+      "name": "empty check set",
+      "observable": "count of evaluations reporting checks[] empty",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "C9c"
+    },
+    {
+      "name": "dropped or rewritten external entries",
+      "observable": "count of source.external_record entries with no byte-identical Atom.text",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "C5"
+    },
+    {
+      "name": "dependency-order violations",
+      "observable": "count of dependency-ordered eligibility violations (DAG cycles, ineligible episodes, un-evicted or unexternalized dependencies)",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "C6"
+    },
+    {
+      "name": "PASS claims on C9b",
+      "observable": "count of report entries claiming PASS for C9b (schema_absent gate must never PASS)",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "C9b"
+    },
+    {
+      "name": "triple-incomplete boundaries",
+      "observable": "count of boundaries failing signpost provenance (incomplete confirmation_record triple)",
+      "threshold": 0,
+      "direction": "above",
+      "maps_to_check": "E-A8"
+    }
+  ]
+}

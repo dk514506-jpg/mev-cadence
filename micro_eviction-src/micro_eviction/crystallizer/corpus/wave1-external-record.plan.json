@@ -1,0 +1,248 @@
+{
+  "atoms": [
+    {
+      "atom_id": "A1",
+      "residual_refs": [
+        "R1",
+        "R2"
+      ],
+      "retention_type": "EVIDENCE",
+      "span_id": "cwl-309-312"
+    },
+    {
+      "atom_id": "A2",
+      "residual_refs": [],
+      "retention_type": "EVIDENCE",
+      "span_id": "iclr-390-391"
+    },
+    {
+      "atom_id": "A5",
+      "residual_refs": [],
+      "retention_type": "CONSTRAINT",
+      "span_id": "cwl-297-298"
+    }
+  ],
+  "boundaries": [],
+  "checks": [
+    {
+      "check_id": "C1",
+      "class": "9a",
+      "falsifier": "paraphrased atom text",
+      "fires_on": "a byte-verbatim atom differs from its span",
+      "predicate": {
+        "kind": "BYTE_PRESENT",
+        "target": "[A1,A2,A5]"
+      },
+      "sandbox_required": false,
+      "status": "PROPOSED GATE"
+    },
+    {
+      "check_id": "C2",
+      "class": "9a",
+      "falsifier": "unresolvable evidence link",
+      "fires_on": "dangling pointer or orphan abstraction",
+      "predicate": {
+        "kind": "POINTER_RESOLVES",
+        "target": "evidence_index"
+      },
+      "sandbox_required": false,
+      "status": "PROPOSED GATE"
+    },
+    {
+      "check_id": "C3",
+      "class": "9a",
+      "falsifier": "token absent from residuals",
+      "fires_on": "missing residual or empty verified_facts",
+      "predicate": {
+        "kind": "BYTE_PRESENT",
+        "target": "residuals[]"
+      },
+      "sandbox_required": false,
+      "status": "PROPOSED GATE"
+    },
+    {
+      "check_id": "C4",
+      "class": "9a",
+      "falsifier": "recomputed hash differs",
+      "fires_on": "fingerprint mismatch claimed fresh",
+      "predicate": {
+        "kind": "HASH_EQ",
+        "target": "freshness"
+      },
+      "sandbox_required": false,
+      "status": "PROPOSED GATE"
+    },
+    {
+      "check_id": "C5",
+      "class": "9a",
+      "falsifier": "non-empty unified diff",
+      "fires_on": "dropped or rewritten external entry",
+      "predicate": {
+        "kind": "BYTE_PRESENT",
+        "target": "source.external_record"
+      },
+      "sandbox_required": false,
+      "status": "PROPOSED GATE"
+    },
+    {
+      "check_id": "C6",
+      "class": "9a",
+      "falsifier": "depended-upon-first order",
+      "fires_on": "ineligible eviction order",
+      "predicate": {
+        "kind": "POINTER_RESOLVES",
+        "target": "dag"
+      },
+      "sandbox_required": false,
+      "status": "PROPOSED GATE"
+    },
+    {
+      "check_id": "C7",
+      "class": "9a",
+      "falsifier": "coverage < 100%",
+      "fires_on": "missing in-scope user span",
+      "predicate": {
+        "kind": "BYTE_PRESENT",
+        "target": "user_content"
+      },
+      "sandbox_required": false,
+      "status": "PROPOSED GATE"
+    },
+    {
+      "check_id": "C8",
+      "class": "9a",
+      "falsifier": "seeded-constraint miss",
+      "fires_on": "untagged or double-tagged atom",
+      "predicate": {
+        "kind": "TAG_CLOSED_SET",
+        "target": "atoms[]"
+      },
+      "sandbox_required": false,
+      "status": "PROPOSED GATE"
+    },
+    {
+      "check_id": "C9a",
+      "class": "9a",
+      "falsifier": "seeded run exits 0",
+      "fires_on": "executing check fails clean run",
+      "predicate": {
+        "kind": "BYTE_PRESENT",
+        "target": "checks[]"
+      },
+      "sandbox_required": true,
+      "status": "PROPOSED GATE"
+    },
+    {
+      "check_id": "C9b",
+      "class": "9b",
+      "falsifier": "no V1.6 review_recorded field",
+      "fires_on": "missing review record",
+      "predicate": {
+        "formal_id": "C9",
+        "kind": "SEMANTIC_REVIEW",
+        "target": "*"
+      },
+      "sandbox_required": false,
+      "status": "PROPOSED GATE"
+    },
+    {
+      "check_id": "C9c",
+      "class": "9c",
+      "falsifier": "checks[] empty",
+      "fires_on": "empty check set or unbound pair",
+      "predicate": {
+        "kind": "SANDBOX_RULE",
+        "target": "*"
+      },
+      "sandbox_required": false,
+      "status": "PROPOSED GATE"
+    },
+    {
+      "check_id": "E-A8",
+      "class": "9a",
+      "falsifier": "agent-only boundary",
+      "fires_on": "triple-incomplete boundary",
+      "predicate": {
+        "kind": "BOUNDARY_TRIPLE",
+        "target": "boundaries[]"
+      },
+      "sandbox_required": false,
+      "status": "PROPOSED GATE"
+    },
+    {
+      "check_id": "E-A9",
+      "class": "9a",
+      "falsifier": "both lifecycle fields null",
+      "fires_on": "bare residual or stale trusted",
+      "predicate": {
+        "kind": "LIFECYCLE_STALE",
+        "target": "residuals[]"
+      },
+      "sandbox_required": false,
+      "status": "PROPOSED GATE"
+    }
+  ],
+  "concept_map": [
+    {
+      "concept": "external-record policy",
+      "corpus_ground": "CWL L309-312; ICLR L390-391",
+      "posture": "PROPOSED GATE",
+      "schema_fields": [
+        "Package.atoms",
+        "Package.residuals"
+      ]
+    }
+  ],
+  "identity": {
+    "build_run_id": "compose-next-cycle1-t7",
+    "corpus_refs": [
+      "wave1-external-record-v1"
+    ],
+    "created_utc": "2026-11-03T00:00:00Z",
+    "pkg_id": "pkg-wave1-external-record-v1"
+  },
+  "manifest": "corpus/wave1-external-record.slice.json",
+  "plan_id": "wave1-external-record-v1",
+  "query_time_epoch": 1793664000.0,
+  "residuals": [
+    {
+      "decay": {
+        "eps_prune": 0.5,
+        "layer": "lexical",
+        "strength": 1.0,
+        "t_max": 86400.0
+      },
+      "exact_value": "grep",
+      "interval": {
+        "t_end": 1825200000.0,
+        "t_start": 1793664000.0
+      },
+      "invalidation_rule": null,
+      "kind": "named_items",
+      "residual_id": "R1",
+      "source_atom_id": "A1"
+    },
+    {
+      "decay": {
+        "eps_prune": 0.5,
+        "layer": "lexical",
+        "strength": 1.0,
+        "t_max": 86400.0
+      },
+      "exact_value": "glob",
+      "interval": {
+        "t_end": 1825200000.0,
+        "t_start": 1793664000.0
+      },
+      "invalidation_rule": null,
+      "kind": "named_items",
+      "residual_id": "R2",
+      "source_atom_id": "A1"
+    }
+  ],
+  "source": {
+    "episodes": [],
+    "external_record": {},
+    "user_spans": []
+  }
+}

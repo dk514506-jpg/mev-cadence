@@ -1,0 +1,19 @@
+# Polyguard W2 anchor for the crystallizer unit (CHARGE-COMPOSE-NEXT-CYCLE-1).
+# Authored by the orchestrator per the CHARGE-ADOPT-VMEM-LIFT-V1 precedent.
+# Commands are EXACTLY the polyguard built-in python plan for this unit,
+# captured from polyguard itself with the contract tests present (byte-for-
+# byte, including the compileall file list and sort order) — custom commands
+# cannot establish trusted test-execution evidence unless byte-identical to
+# the built-in plan. The second command executes the REAL contract tests
+# (tests/test_crystallizer_contract.py), which run the campaign-root
+# crystallizer suite and the package-of-record validation gate in fresh
+# subprocesses. test_patterns points at the real contract tests only.
+[project]
+languages = ["python"]
+
+[checks.python]
+commands = [
+  ["/home/greenknight/workspace/.venv-furox-polyglot-code-guard/bin/python", "-m", "compileall", "-q", "__init__.py", "cli.py", "corpus.py", "emit.py", "probe.py", "sandbox.py", "tests/test_crystallizer_contract.py", "validate.py"],
+  ["/home/greenknight/workspace/.venv-furox-polyglot-code-guard/bin/python", "-m", "pytest", "-q", "tests/test_crystallizer_contract.py"],
+]
+test_patterns = ["tests/test_*.py"]

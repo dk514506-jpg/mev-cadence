@@ -1,0 +1,12 @@
+The agent must never delete user content under token pressure.
+An exploratory episode u is only eligible for eviction if every dependent has been fully evicted.
+Residuals recover precision; verified facts override profile.
+Stale residuals are warnings, never trusted context.
+Supported(u) iff Executable(u) is non-empty and every check passes.
+Compression touches reasoning only; evidence remains unchanged.
+Every claim carries at least one claim-to-evidence pointer.
+A package claiming boundary-based eviction with zero recorded boundaries FAILS.
+Bare residuals with neither decay nor interval are non-conforming.
+Sandboxing is required whenever executable checks run.
+Type labels are exactly one per atom; untagged atoms fail.
+Freshness is computed by hash equality, not by assertion.

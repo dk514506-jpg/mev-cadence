@@ -1,0 +1,14 @@
+# Polyguard W2 anchor (CHARGE-ADOPT-VMEM-LIFT-V1, sealed plan step 5).
+# Commands are EXACTLY the polyguard built-in python plan for this project
+# unit (source + tests discovered under tests/) — custom commands cannot
+# establish trusted test-execution evidence, so the built-in plan is
+# reproduced verbatim. test_patterns points at the real contract tests.
+[project]
+languages = ["python"]
+
+[checks.python]
+commands = [
+  ["/home/greenknight/workspace/.venv-furox-polyglot-code-guard/bin/python", "-m", "compileall", "-q", "__init__.py", "policy.py", "tests/test_vmem_lift_contract.py"],
+  ["/home/greenknight/workspace/.venv-furox-polyglot-code-guard/bin/python", "-m", "pytest", "-q", "tests/test_vmem_lift_contract.py"],
+]
+test_patterns = ["tests/test_*.py"]
